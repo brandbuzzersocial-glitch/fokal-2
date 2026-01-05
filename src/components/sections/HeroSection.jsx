@@ -53,18 +53,18 @@ export const HeroSection = () => {
                     <ShootingStar key={i} delay={i * 2} />
                 ))}
 
-                {/* Abstract Glow Effects with Flicker Animation */}
+                {/* Abstract Glow Effects with Flicker Animation - AMPLIFIED */}
                 <motion.div
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: [0, 0.4, 0.1, 0.6, 0.2, 0.8, 1] }}
-                    transition={{ duration: 2.5, times: [0, 0.1, 0.2, 0.3, 0.4, 0.6, 1], ease: "easeInOut" }}
-                    className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl filter mix-blend-screen"
+                    animate={{ opacity: [0, 0.8, 0.2, 0.9, 0.4, 1, 0.6] }}
+                    transition={{ duration: 2, times: [0, 0.1, 0.2, 0.3, 0.4, 0.6, 1], ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
+                    className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-red-600/30 rounded-full blur-[120px] filter mix-blend-screen"
                 ></motion.div>
                 <motion.div
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: [0, 0.3, 0.1, 0.7, 0.2, 0.9, 1] }}
-                    transition={{ duration: 3, delay: 0.2, times: [0, 0.1, 0.2, 0.3, 0.5, 0.7, 1], ease: "easeOut" }}
-                    className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px] filter mix-blend-screen"
+                    animate={{ opacity: [0, 0.7, 0.2, 0.8, 0.3, 1, 0.5] }}
+                    transition={{ duration: 2.5, delay: 0.1, times: [0, 0.1, 0.2, 0.3, 0.5, 0.7, 1], ease: "easeOut", repeat: Infinity, repeatType: "reverse" }}
+                    className="absolute bottom-1/4 right-1/4 w-[700px] h-[700px] bg-orange-500/20 rounded-full blur-[150px] filter mix-blend-screen"
                 ></motion.div>
             </div>
 
