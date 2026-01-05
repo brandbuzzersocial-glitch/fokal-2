@@ -53,9 +53,19 @@ export const HeroSection = () => {
                     <ShootingStar key={i} delay={i * 2} />
                 ))}
 
-                {/* Abstract Glow Effects */}
-                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl filter mix-blend-screen animate-pulse"></div>
-                <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px] filter mix-blend-screen"></div>
+                {/* Abstract Glow Effects with Flicker Animation */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: [0, 0.4, 0.1, 0.6, 0.2, 0.8, 1] }}
+                    transition={{ duration: 2.5, times: [0, 0.1, 0.2, 0.3, 0.4, 0.6, 1], ease: "easeInOut" }}
+                    className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl filter mix-blend-screen"
+                ></motion.div>
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: [0, 0.3, 0.1, 0.7, 0.2, 0.9, 1] }}
+                    transition={{ duration: 3, delay: 0.2, times: [0, 0.1, 0.2, 0.3, 0.5, 0.7, 1], ease: "easeOut" }}
+                    className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px] filter mix-blend-screen"
+                ></motion.div>
             </div>
 
             <div className="container mx-auto px-4 md:px-6 relative z-10">
